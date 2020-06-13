@@ -1,7 +1,10 @@
 #include "server.h"
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <fcntl.h>
 #include "../SERVER_SETTINGS.h"
 
-//#define PORT "8083"
 
 void disconnectClient(fd_set &master, int socketNumber);
 
@@ -57,6 +60,10 @@ int main(int argc, char *argv[]) {
     FD_ZERO(&master);
     FD_SET(socket_listen, &master);
     SOCKET max_socket = socket_listen;
+
+    int fd;
+    char * myfifo = "/tmp/myfifo";
+    mkfifo(myfifo, 0666);
 
     //Waiting for connections
     while (true) {
@@ -123,7 +130,10 @@ int main(int argc, char *argv[]) {
                             send(i, message.c_str(), message.length(), 0);
                         }
                         string field = StringUtil::flatMapVectorOfVectorsIntoMessage(raceField.getFields());
-                        cout << field;
+//                        cout << field; //no need to display, griddisplay takes car of that
+
+                        fd = open(myfifo, O_WRONLY);
+                        write(fd, field.c_str(), field.length()+1);
                     }
                 }
             } //if FD_ISSET

@@ -9,16 +9,16 @@
 /home/extremer/Projects/fh/bes/Vehicle-Test-Grid/display/display_main.cpp
 stdio.h
 -
-string.h
+string
 -
 fcntl.h
 -
 sys/stat.h
 -
-sys/types.h
--
 unistd.h
 -
 cstdlib
+-
+csignal
 -
 
