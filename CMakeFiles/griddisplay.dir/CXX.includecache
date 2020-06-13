@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/display/display_main.cpp
+stdio.h
+-
+string.h
+-
+fcntl.h
+-
+sys/stat.h
+-
+sys/types.h
+-
+unistd.h
+-
+cstdlib
+-
+
