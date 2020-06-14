@@ -104,6 +104,7 @@ bool RaceField::moveCar(int carIndex, const std::string &receivedLetter) {
     outOfLoop:
 
     if(x == -1){ //meaning there is no such car on the field
+        removeCarName(carIndex);
         return false;
     }
 
@@ -129,8 +130,10 @@ bool RaceField::moveCar(int carIndex, const std::string &receivedLetter) {
     if(fields.at(newY).at(newX) != " "){ //meaning there is a car clash
         std::string letter = fields.at(newY).at(newX);
         fields.at(newY).at(newX) = " ";
-        removeCarName(carNames[carIndex]);
-        removeCarName(letter);
+
+        wasClash = true;
+        removeCarName(carIndex); //deleting 1st car (the one which was moving to the field)
+        lastVictimCarIndex = removeCarName(letter); //deleting 2nd car (the one that was on the field)
         return false;
     }
 
@@ -138,13 +141,14 @@ bool RaceField::moveCar(int carIndex, const std::string &receivedLetter) {
     return true;
 }
 
-void RaceField::removeCarName(const std::string &carName) {
+int RaceField::removeCarName(const std::string &carName) {
     for (int i = 0; i < std::size(carNames); ++i) {
-        if(carNames[i].compare(carName) != 0){
+        if(carNames[i].compare(carName) == 0){
             carNames[i] = " ";
-            break;
+            return i;
         }
     }
+    return -1; //if no car found
 }
 
 void RaceField::removeCarName(int carIndex) {
@@ -160,5 +164,21 @@ bool RaceField::isFull() {
         }
     }
     return true;
+}
+
+bool RaceField::isWasClash() const {
+    return wasClash;
+}
+
+int RaceField::getLastVictimCarIndex() const {
+    return lastVictimCarIndex;
+}
+
+void RaceField::setWasClash(bool wasClash) {
+    RaceField::wasClash = wasClash;
+}
+
+void RaceField::setVictimCarIndex(int victimCarIndex) {
+    RaceField::lastVictimCarIndex = victimCarIndex;
 }
 

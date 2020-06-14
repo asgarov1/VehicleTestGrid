@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <cstdlib>
 #include <csignal>
+#include <iostream>
 
 using namespace std;
 
@@ -21,6 +22,7 @@ int main() {
 
     int inputSizeInBytes = 4096;
     char input[inputSizeInBytes];
+    std::cout << "Once clients register grid will be displayed here" << std::endl;
     while (keepReading) {
         fd1 = open(myfifo, O_RDONLY);
         // First open in read only and read

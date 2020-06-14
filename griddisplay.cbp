@@ -8,28 +8,28 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/extremer/Projects/fh/bes/Vehicle-Test-Grid"/>
+				<Option working_dir="/home/extremer/Projects/fh/bes/VehicleTestGrid"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/VehicleTestGrid/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/VehicleTestGrid/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/VehicleTestGrid/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/VehicleTestGrid/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/extremer/Projects/fh/bes/Vehicle-Test-Grid"/>
+				<Option working_dir="/home/extremer/Projects/fh/bes/VehicleTestGrid"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/VehicleTestGrid/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/VehicleTestGrid/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/VehicleTestGrid/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/VehicleTestGrid/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gridserver">
-				<Option output="/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/gridserver" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/extremer/Projects/fh/bes/Vehicle-Test-Grid"/>
+				<Option output="/home/extremer/Projects/fh/bes/VehicleTestGrid/gridserver" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/extremer/Projects/fh/bes/VehicleTestGrid"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -44,15 +44,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/Makefile&quot;  VERBOSE=1 gridserver"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/VehicleTestGrid/Makefile&quot;  VERBOSE=1 gridserver"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/VehicleTestGrid/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/VehicleTestGrid/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/VehicleTestGrid/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="gridserver/fast">
-				<Option output="/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/gridserver" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/extremer/Projects/fh/bes/Vehicle-Test-Grid"/>
+				<Option output="/home/extremer/Projects/fh/bes/VehicleTestGrid/gridserver" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/extremer/Projects/fh/bes/VehicleTestGrid"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -67,15 +67,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/Makefile&quot;  VERBOSE=1 gridserver/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/VehicleTestGrid/Makefile&quot;  VERBOSE=1 gridserver/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/VehicleTestGrid/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/VehicleTestGrid/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/VehicleTestGrid/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="griddisplay">
-				<Option output="/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/griddisplay" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/extremer/Projects/fh/bes/Vehicle-Test-Grid"/>
+				<Option output="/home/extremer/Projects/fh/bes/VehicleTestGrid/griddisplay" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/extremer/Projects/fh/bes/VehicleTestGrid"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -90,15 +90,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/Makefile&quot;  VERBOSE=1 griddisplay"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/VehicleTestGrid/Makefile&quot;  VERBOSE=1 griddisplay"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/VehicleTestGrid/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/VehicleTestGrid/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/VehicleTestGrid/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="griddisplay/fast">
-				<Option output="/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/griddisplay" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/extremer/Projects/fh/bes/Vehicle-Test-Grid"/>
+				<Option output="/home/extremer/Projects/fh/bes/VehicleTestGrid/griddisplay" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/extremer/Projects/fh/bes/VehicleTestGrid"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -113,25 +113,25 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/Makefile&quot;  VERBOSE=1 griddisplay/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/VehicleTestGrid/Makefile&quot;  VERBOSE=1 griddisplay/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/VehicleTestGrid/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/VehicleTestGrid/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/VehicleTestGrid/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/extremer/Projects/fh/bes/Vehicle-Test-Grid"/>
+				<Option working_dir="/home/extremer/Projects/fh/bes/VehicleTestGrid"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/VehicleTestGrid/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/VehicleTestGrid/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/VehicleTestGrid/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/VehicleTestGrid/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="vehicleclient">
-				<Option output="/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/vehicleclient" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/extremer/Projects/fh/bes/Vehicle-Test-Grid"/>
+				<Option output="/home/extremer/Projects/fh/bes/VehicleTestGrid/vehicleclient" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/extremer/Projects/fh/bes/VehicleTestGrid"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -146,15 +146,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/Makefile&quot;  VERBOSE=1 vehicleclient"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/VehicleTestGrid/Makefile&quot;  VERBOSE=1 vehicleclient"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/VehicleTestGrid/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/VehicleTestGrid/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/VehicleTestGrid/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="vehicleclient/fast">
-				<Option output="/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/vehicleclient" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/extremer/Projects/fh/bes/Vehicle-Test-Grid"/>
+				<Option output="/home/extremer/Projects/fh/bes/VehicleTestGrid/vehicleclient" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/extremer/Projects/fh/bes/VehicleTestGrid"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -169,41 +169,41 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/Makefile&quot;  VERBOSE=1 vehicleclient/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/VehicleTestGrid/Makefile&quot;  VERBOSE=1 vehicleclient/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/VehicleTestGrid/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/VehicleTestGrid/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/extremer/Projects/fh/bes/VehicleTestGrid/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/client/main.cpp">
+		<Unit filename="/home/extremer/Projects/fh/bes/VehicleTestGrid/client/main.cpp">
 			<Option target="vehicleclient"/>
 		</Unit>
-		<Unit filename="/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/display/display_main.cpp">
+		<Unit filename="/home/extremer/Projects/fh/bes/VehicleTestGrid/display/display_main.cpp">
 			<Option target="griddisplay"/>
 		</Unit>
-		<Unit filename="/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/display/display_main.h">
+		<Unit filename="/home/extremer/Projects/fh/bes/VehicleTestGrid/display/display_main.h">
 			<Option target="griddisplay"/>
 		</Unit>
-		<Unit filename="/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/server/RaceField.cpp">
+		<Unit filename="/home/extremer/Projects/fh/bes/VehicleTestGrid/server/RaceField.cpp">
 			<Option target="gridserver"/>
 		</Unit>
-		<Unit filename="/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/server/RaceField.h">
+		<Unit filename="/home/extremer/Projects/fh/bes/VehicleTestGrid/server/RaceField.h">
 			<Option target="gridserver"/>
 		</Unit>
-		<Unit filename="/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/server/StringUtil.cpp">
+		<Unit filename="/home/extremer/Projects/fh/bes/VehicleTestGrid/server/StringUtil.cpp">
 			<Option target="gridserver"/>
 		</Unit>
-		<Unit filename="/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/server/StringUtil.h">
+		<Unit filename="/home/extremer/Projects/fh/bes/VehicleTestGrid/server/StringUtil.h">
 			<Option target="gridserver"/>
 		</Unit>
-		<Unit filename="/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/server/main.cpp">
+		<Unit filename="/home/extremer/Projects/fh/bes/VehicleTestGrid/server/main.cpp">
 			<Option target="gridserver"/>
 		</Unit>
-		<Unit filename="/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/server/server.h">
+		<Unit filename="/home/extremer/Projects/fh/bes/VehicleTestGrid/server/server.h">
 			<Option target="gridserver"/>
 		</Unit>
-		<Unit filename="/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/CMakeLists.txt">
+		<Unit filename="/home/extremer/Projects/fh/bes/VehicleTestGrid/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

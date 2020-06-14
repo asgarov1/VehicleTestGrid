@@ -96,7 +96,6 @@ int main(int argc, char *argv[]) {
             char read[4096];
             int bytes_received = recv(socket_peer, read, 4096, 0);
             if (bytes_received < 1) {
-                printf("Connection closed by peer.\n");
                 break;
             }
             if (std::string(read).find_first_of("Registration OK") != std::string::npos) {

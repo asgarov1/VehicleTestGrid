@@ -44,10 +44,10 @@ RM = /snap/clion/114/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/extremer/Projects/fh/bes/Vehicle-Test-Grid
+CMAKE_SOURCE_DIR = /home/extremer/Projects/fh/bes/VehicleTestGrid
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/extremer/Projects/fh/bes/Vehicle-Test-Grid
+CMAKE_BINARY_DIR = /home/extremer/Projects/fh/bes/VehicleTestGrid
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -78,14 +78,14 @@ clean: CMakeFiles/vehicleclient.dir/clean
 CMakeFiles/gridserver.dir/all:
 	$(MAKE) -f CMakeFiles/gridserver.dir/build.make CMakeFiles/gridserver.dir/depend
 	$(MAKE) -f CMakeFiles/gridserver.dir/build.make CMakeFiles/gridserver.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/CMakeFiles --progress-num=3,4,5,6 "Built target gridserver"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/extremer/Projects/fh/bes/VehicleTestGrid/CMakeFiles --progress-num=3,4,5,6 "Built target gridserver"
 .PHONY : CMakeFiles/gridserver.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/gridserver.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/extremer/Projects/fh/bes/Vehicle-Test-Grid/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/extremer/Projects/fh/bes/VehicleTestGrid/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/gridserver.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/extremer/Projects/fh/bes/Vehicle-Test-Grid/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/extremer/Projects/fh/bes/VehicleTestGrid/CMakeFiles 0
 .PHONY : CMakeFiles/gridserver.dir/rule
 
 # Convenience name for target.
@@ -105,14 +105,14 @@ CMakeFiles/gridserver.dir/clean:
 CMakeFiles/griddisplay.dir/all:
 	$(MAKE) -f CMakeFiles/griddisplay.dir/build.make CMakeFiles/griddisplay.dir/depend
 	$(MAKE) -f CMakeFiles/griddisplay.dir/build.make CMakeFiles/griddisplay.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/CMakeFiles --progress-num=1,2 "Built target griddisplay"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/extremer/Projects/fh/bes/VehicleTestGrid/CMakeFiles --progress-num=1,2 "Built target griddisplay"
 .PHONY : CMakeFiles/griddisplay.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/griddisplay.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/extremer/Projects/fh/bes/Vehicle-Test-Grid/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/extremer/Projects/fh/bes/VehicleTestGrid/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/griddisplay.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/extremer/Projects/fh/bes/Vehicle-Test-Grid/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/extremer/Projects/fh/bes/VehicleTestGrid/CMakeFiles 0
 .PHONY : CMakeFiles/griddisplay.dir/rule
 
 # Convenience name for target.
@@ -132,14 +132,14 @@ CMakeFiles/griddisplay.dir/clean:
 CMakeFiles/vehicleclient.dir/all:
 	$(MAKE) -f CMakeFiles/vehicleclient.dir/build.make CMakeFiles/vehicleclient.dir/depend
 	$(MAKE) -f CMakeFiles/vehicleclient.dir/build.make CMakeFiles/vehicleclient.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/CMakeFiles --progress-num=7,8 "Built target vehicleclient"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/extremer/Projects/fh/bes/VehicleTestGrid/CMakeFiles --progress-num=7,8 "Built target vehicleclient"
 .PHONY : CMakeFiles/vehicleclient.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/vehicleclient.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/extremer/Projects/fh/bes/Vehicle-Test-Grid/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/extremer/Projects/fh/bes/VehicleTestGrid/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/vehicleclient.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/extremer/Projects/fh/bes/Vehicle-Test-Grid/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/extremer/Projects/fh/bes/VehicleTestGrid/CMakeFiles 0
 .PHONY : CMakeFiles/vehicleclient.dir/rule
 
 # Convenience name for target.

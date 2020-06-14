@@ -17,16 +17,14 @@ class RaceField {
     int dimensionX{};
     int dimensionY{};
 
+    bool wasClash;
+    int lastVictimCarIndex;
+
     void initialiseRaceField(int argc, char *argv[]);
     void setCarName(int index, std::string name);
 
 public:
     RaceField(int argc, char **argv);
-
-    //Getters
-    [[nodiscard]] const std::vector<std::vector<std::string>> &getFields() const;
-    [[nodiscard]] const std::string *getCarNames() const;
-    [[nodiscard]] std::string getCarName(int index) const;
 
     std::basic_string<char> placeCar(int index, const std::string& carName);
 
@@ -34,11 +32,22 @@ public:
 
     bool moveCar(int carIndex, const std::string& string);
 
-    void removeCarName(const std::string &carName);
+    int removeCarName(const std::string &carName);
 
     void removeCarName(int index);
 
     bool isFull();
+
+    //Getters
+    [[nodiscard]] const std::vector<std::vector<std::string>> &getFields() const;
+    [[nodiscard]] const std::string *getCarNames() const;
+    [[nodiscard]] std::string getCarName(int index) const;
+    [[nodiscard]] bool isWasClash() const;
+    [[nodiscard]] int getLastVictimCarIndex() const;
+
+    //Setters
+    void setWasClash(bool wasClash);
+    void setVictimCarIndex(int victimCarIndex);
 };
 
 

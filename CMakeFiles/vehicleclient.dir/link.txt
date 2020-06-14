@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/vehicleclient.dir/client/main.cpp.o  -o vehicleclient 
+/usr/bin/c++     CMakeFiles/vehicleclient.dir/client/main.cpp.o  -o vehicleclient 

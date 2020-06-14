@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/SERVER_SETTINGS.h
+/home/extremer/Projects/fh/bes/VehicleTestGrid/SERVER_SETTINGS.h
 
-/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/client/main.cpp
+/home/extremer/Projects/fh/bes/VehicleTestGrid/client/main.cpp
 sys/types.h
 -
 sys/socket.h
@@ -36,5 +36,5 @@ string
 iostream
 -
 ../SERVER_SETTINGS.h
-/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/SERVER_SETTINGS.h
+/home/extremer/Projects/fh/bes/VehicleTestGrid/SERVER_SETTINGS.h
 

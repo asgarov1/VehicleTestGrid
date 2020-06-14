@@ -6,6 +6,6 @@
 #define SERVER_SETTINGS_H
 
 #define HOSTNAME "127.0.0.1"
-#define PORT "4000"
+#define PORT "5000"
 
 #endif //SERVER_SETTINGS_H

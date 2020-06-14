@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/display/display_main.cpp" "/home/extremer/Projects/fh/bes/Vehicle-Test-Grid/CMakeFiles/griddisplay.dir/display/display_main.cpp.o"
+  "/home/extremer/Projects/fh/bes/VehicleTestGrid/display/display_main.cpp" "/home/extremer/Projects/fh/bes/VehicleTestGrid/CMakeFiles/griddisplay.dir/display/display_main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

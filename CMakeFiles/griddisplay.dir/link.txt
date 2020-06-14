@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/griddisplay.dir/display/display_main.cpp.o  -o griddisplay 
+/usr/bin/c++     CMakeFiles/griddisplay.dir/display/display_main.cpp.o  -o griddisplay 

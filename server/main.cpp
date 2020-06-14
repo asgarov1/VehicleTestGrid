@@ -62,10 +62,11 @@ int main(int argc, char *argv[]) {
     SOCKET max_socket = socket_listen;
 
     int fd;
-    char * myfifo = "/tmp/myfifo";
+    char *myfifo = "/tmp/myfifo";
     mkfifo(myfifo, 0666);
 
     //Waiting for connections
+    cout << "Server is running, ready for connections..." << endl;
     while (true) {
         fd_set reads;
         reads = master;
@@ -74,7 +75,6 @@ int main(int argc, char *argv[]) {
             return 1;
         }
 
-//        try {
         SOCKET i;
         for (i = 1; i <= max_socket; ++i) {
             if (FD_ISSET(i, &reads)) {
@@ -109,8 +109,10 @@ int main(int argc, char *argv[]) {
                         continue;
                     }
                     if (!clientIsRegistered(raceField, i)) {
-                        string receivedLetter = string(read).substr(0,1); //message contains \n and ip, therefore I have to use substr
-                        if (!raceField.isFull() && StringUtil::isSingleCapitalLetter(receivedLetter) && !raceField.letterIsTaken(receivedLetter)) {
+                        string receivedLetter = string(read).substr(0,
+                                                                    1); //message contains \n and ip, therefore I have to use substr
+                        if (!raceField.isFull() && StringUtil::isSingleCapitalLetter(receivedLetter) &&
+                            !raceField.letterIsTaken(receivedLetter)) {
                             string position = raceField.placeCar(i, receivedLetter);
                             string message = "Registration OK. Start position: " + position + ".";
                             send(i, message.c_str(), message.length(), 0);
@@ -125,25 +127,24 @@ int main(int argc, char *argv[]) {
                             string message = "Vehicle has been eliminated.\n";
                             send(i, message.c_str(), message.length(), 0);
                             disconnectClient(master, i);
+
+                            if(raceField.isWasClash() && raceField.getLastVictimCarIndex() != -1){
+                                send(raceField.getLastVictimCarIndex(), message.c_str(), message.length(), 0);
+                                disconnectClient(master, raceField.getLastVictimCarIndex());
+                                raceField.setWasClash(false);
+                            }
                         } else {
                             string message = "Enter move: ";
                             send(i, message.c_str(), message.length(), 0);
                         }
                         string field = StringUtil::flatMapVectorOfVectorsIntoMessage(raceField.getFields());
-//                        cout << field; //no need to display, griddisplay takes car of that
-
                         fd = open(myfifo, O_WRONLY);
-                        write(fd, field.c_str(), field.length()+1);
+                        write(fd, field.c_str(), field.length() + 1);
                     }
                 }
             } //if FD_ISSET
         } //for i to max_socket
-    }
-//        catch (...) {
-//
-//            break;
-//        }
-    //while(1)
+    }//while(1)
 
     printf("Closing listening socket...\n");
     CLOSESOCKET(socket_listen);
