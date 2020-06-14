@@ -3,7 +3,7 @@
   & Aaron Nietgen
 
 <h4>Usage:</h4> 
-first run "make all" <br>
+first run <b>cmake ./</b> and then <b>make all</b> <br>
 after that you can run <br>
 <ul>
 <li>1 server: 	       <b>./gridserver -x NUM -y NUM</b></li>
