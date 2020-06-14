@@ -48,10 +48,10 @@ RM = /snap/clion/114/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/extremer/Projects/fh/bes/VehicleTestGrid
+CMAKE_SOURCE_DIR = /home/extremer/Projects/fh/bes/copy/VehicleTestGrid
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/extremer/Projects/fh/bes/VehicleTestGrid
+CMAKE_BINARY_DIR = /home/extremer/Projects/fh/bes/copy/VehicleTestGrid
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/extremer/Projects/fh/bes/VehicleTestGrid/CMakeFiles /home/extremer/Projects/fh/bes/VehicleTestGrid/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/extremer/Projects/fh/bes/copy/VehicleTestGrid/CMakeFiles /home/extremer/Projects/fh/bes/copy/VehicleTestGrid/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/extremer/Projects/fh/bes/VehicleTestGrid/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/extremer/Projects/fh/bes/copy/VehicleTestGrid/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -124,6 +124,19 @@ gridserver/fast:
 .PHONY : gridserver/fast
 
 #=============================================================================
+# Target rules for targets named vehcileclient
+
+# Build rule for target.
+vehcileclient: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 vehcileclient
+.PHONY : vehcileclient
+
+# fast build rule for target.
+vehcileclient/fast:
+	$(MAKE) -f CMakeFiles/vehcileclient.dir/build.make CMakeFiles/vehcileclient.dir/build
+.PHONY : vehcileclient/fast
+
+#=============================================================================
 # Target rules for targets named griddisplay
 
 # Build rule for target.
@@ -136,26 +149,13 @@ griddisplay/fast:
 	$(MAKE) -f CMakeFiles/griddisplay.dir/build.make CMakeFiles/griddisplay.dir/build
 .PHONY : griddisplay/fast
 
-#=============================================================================
-# Target rules for targets named vehicleclient
-
-# Build rule for target.
-vehicleclient: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 vehicleclient
-.PHONY : vehicleclient
-
-# fast build rule for target.
-vehicleclient/fast:
-	$(MAKE) -f CMakeFiles/vehicleclient.dir/build.make CMakeFiles/vehicleclient.dir/build
-.PHONY : vehicleclient/fast
-
 client/main.o: client/main.cpp.o
 
 .PHONY : client/main.o
 
 # target to build an object file
 client/main.cpp.o:
-	$(MAKE) -f CMakeFiles/vehicleclient.dir/build.make CMakeFiles/vehicleclient.dir/client/main.cpp.o
+	$(MAKE) -f CMakeFiles/vehcileclient.dir/build.make CMakeFiles/vehcileclient.dir/client/main.cpp.o
 .PHONY : client/main.cpp.o
 
 client/main.i: client/main.cpp.i
@@ -164,7 +164,7 @@ client/main.i: client/main.cpp.i
 
 # target to preprocess a source file
 client/main.cpp.i:
-	$(MAKE) -f CMakeFiles/vehicleclient.dir/build.make CMakeFiles/vehicleclient.dir/client/main.cpp.i
+	$(MAKE) -f CMakeFiles/vehcileclient.dir/build.make CMakeFiles/vehcileclient.dir/client/main.cpp.i
 .PHONY : client/main.cpp.i
 
 client/main.s: client/main.cpp.s
@@ -173,7 +173,7 @@ client/main.s: client/main.cpp.s
 
 # target to generate assembly for a file
 client/main.cpp.s:
-	$(MAKE) -f CMakeFiles/vehicleclient.dir/build.make CMakeFiles/vehicleclient.dir/client/main.cpp.s
+	$(MAKE) -f CMakeFiles/vehcileclient.dir/build.make CMakeFiles/vehcileclient.dir/client/main.cpp.s
 .PHONY : client/main.cpp.s
 
 display/display_main.o: display/display_main.cpp.o
@@ -229,6 +229,33 @@ server/RaceField.s: server/RaceField.cpp.s
 server/RaceField.cpp.s:
 	$(MAKE) -f CMakeFiles/gridserver.dir/build.make CMakeFiles/gridserver.dir/server/RaceField.cpp.s
 .PHONY : server/RaceField.cpp.s
+
+server/Server.o: server/Server.cpp.o
+
+.PHONY : server/Server.o
+
+# target to build an object file
+server/Server.cpp.o:
+	$(MAKE) -f CMakeFiles/gridserver.dir/build.make CMakeFiles/gridserver.dir/server/Server.cpp.o
+.PHONY : server/Server.cpp.o
+
+server/Server.i: server/Server.cpp.i
+
+.PHONY : server/Server.i
+
+# target to preprocess a source file
+server/Server.cpp.i:
+	$(MAKE) -f CMakeFiles/gridserver.dir/build.make CMakeFiles/gridserver.dir/server/Server.cpp.i
+.PHONY : server/Server.cpp.i
+
+server/Server.s: server/Server.cpp.s
+
+.PHONY : server/Server.s
+
+# target to generate assembly for a file
+server/Server.cpp.s:
+	$(MAKE) -f CMakeFiles/gridserver.dir/build.make CMakeFiles/gridserver.dir/server/Server.cpp.s
+.PHONY : server/Server.cpp.s
 
 server/StringUtil.o: server/StringUtil.cpp.o
 
@@ -292,9 +319,9 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... gridserver"
+	@echo "... vehcileclient"
 	@echo "... griddisplay"
 	@echo "... edit_cache"
-	@echo "... vehicleclient"
 	@echo "... client/main.o"
 	@echo "... client/main.i"
 	@echo "... client/main.s"
@@ -304,6 +331,9 @@ help:
 	@echo "... server/RaceField.o"
 	@echo "... server/RaceField.i"
 	@echo "... server/RaceField.s"
+	@echo "... server/Server.o"
+	@echo "... server/Server.i"
+	@echo "... server/Server.s"
 	@echo "... server/StringUtil.o"
 	@echo "... server/StringUtil.i"
 	@echo "... server/StringUtil.s"

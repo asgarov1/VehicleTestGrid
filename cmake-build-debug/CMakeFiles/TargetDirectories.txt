@@ -1,8 +1,0 @@
-/home/extremer/Projects/fh/bes/griddisplay/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/extremer/Projects/fh/bes/griddisplay/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/extremer/Projects/fh/bes/griddisplay/cmake-build-debug/gridserver/CMakeFiles/rebuild_cache.dir
-/home/extremer/Projects/fh/bes/griddisplay/cmake-build-debug/gridserver/CMakeFiles/edit_cache.dir
-/home/extremer/Projects/fh/bes/griddisplay/cmake-build-debug/gridserver/CMakeFiles/gridserver.dir
-/home/extremer/Projects/fh/bes/griddisplay/cmake-build-debug/client/CMakeFiles/rebuild_cache.dir
-/home/extremer/Projects/fh/bes/griddisplay/cmake-build-debug/client/CMakeFiles/edit_cache.dir
-/home/extremer/Projects/fh/bes/griddisplay/cmake-build-debug/client/CMakeFiles/client.dir

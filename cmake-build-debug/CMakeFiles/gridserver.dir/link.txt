@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/gridserver.dir/gridserver/main.cpp.o CMakeFiles/gridserver.dir/gridserver/RaceField.cpp.o CMakeFiles/gridserver.dir/gridserver/StringUtil.cpp.o  -o gridserver 

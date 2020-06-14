@@ -1,12 +1,11 @@
-#include "server.h"
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <unistd.h>
 #include <fcntl.h>
-#include "../SERVER_SETTINGS.h"
-
-
-void disconnectClient(fd_set &master, int socketNumber);
+#include <iostream>
+#include "RaceField.h"
+#include "StringUtil.h"
+#include "Server.h"
 
 bool clientIsRegistered(const RaceField &raceField, int socketNumber);
 
@@ -20,69 +19,31 @@ int main(int argc, char *argv[]) {
 
     RaceField raceField(argc, argv);
 
-    //Configuring local address
-    struct addrinfo hints{};
-    memset(&hints, 0, sizeof(hints));
-    hints.ai_family = AF_INET;
-    hints.ai_socktype = SOCK_STREAM;
-    hints.ai_flags = AI_PASSIVE;
-
-    struct addrinfo *bind_address;
-    getaddrinfo(nullptr, PORT, &hints, &bind_address);
-
-
-    //Creating socket
-    SOCKET socket_listen;
-    socket_listen = socket(bind_address->ai_family,
-                           bind_address->ai_socktype, bind_address->ai_protocol);
-    if (!ISVALIDSOCKET(socket_listen)) {
-        fprintf(stderr, "socket() failed. (%d)\n", GETSOCKETERRNO());
-        return 1;
-    }
-
-
-    //Binding socket to local address
-    if (bind(socket_listen,
-             bind_address->ai_addr, bind_address->ai_addrlen)) {
-        fprintf(stderr, "bind() failed. (%d)\n", GETSOCKETERRNO());
-        return 1;
-    }
-    freeaddrinfo(bind_address);
-
-
-    //Listening
-    if (listen(socket_listen, 10) < 0) {
-        fprintf(stderr, "listen() failed. (%d)\n", GETSOCKETERRNO());
-        return 1;
-    }
-
-    fd_set master;
-    FD_ZERO(&master);
-    FD_SET(socket_listen, &master);
-    SOCKET max_socket = socket_listen;
-
+    //Setting up griddisplay pipe
     int fd;
     char *myfifo = "/tmp/myfifo";
     mkfifo(myfifo, 0666);
+
+    Server server;
 
     //Waiting for connections
     cout << "Server is running, ready for connections..." << endl;
     while (true) {
         fd_set reads;
-        reads = master;
-        if (select(max_socket + 1, &reads, 0, 0, 0) < 0) {
+        reads = server.getMaster();
+        if (select(server.getMaxSocket() + 1, &reads, 0, 0, 0) < 0) {
             fprintf(stderr, "select() failed. (%d)\n", GETSOCKETERRNO());
             return 1;
         }
 
         SOCKET i;
-        for (i = 1; i <= max_socket; ++i) {
+        for (i = 1; i <= server.getMaxSocket(); ++i) {
             if (FD_ISSET(i, &reads)) {
 
-                if (i == socket_listen) {
+                if (i == server.getSocketListen()) {
                     struct sockaddr_storage client_address{};
                     socklen_t client_len = sizeof(client_address);
-                    SOCKET socket_client = accept(socket_listen,
+                    SOCKET socket_client = accept(server.getSocketListen(),
                                                   (struct sockaddr *) &client_address,
                                                   &client_len);
                     if (!ISVALIDSOCKET(socket_client)) {
@@ -91,9 +52,9 @@ int main(int argc, char *argv[]) {
                         return 1;
                     }
 
-                    FD_SET(socket_client, &master);
-                    if (socket_client > max_socket)
-                        max_socket = socket_client;
+                    server.fdSetWithMaster(socket_client);
+                    if (socket_client > server.getMaxSocket())
+                        server.setMaxSocket(socket_client);
 
                     char address_buffer[100];
                     getnameinfo((struct sockaddr *) &client_address,
@@ -105,7 +66,7 @@ int main(int argc, char *argv[]) {
                     char read[1024];
                     int bytes_received = recv(i, read, 1024, 0);
                     if (bytes_received < 1) {
-                        disconnectClient(master, i);
+                        server.disconnectClient(i);
                         continue;
                     }
                     if (!clientIsRegistered(raceField, i)) {
@@ -119,18 +80,18 @@ int main(int argc, char *argv[]) {
                         } else {
                             string message = "Registration FAILED\n";
                             send(i, message.c_str(), message.length(), 0);
-                            disconnectClient(master, i);
+                            server.disconnectClient(i);
                         }
                     } else {
                         string receivedLetter = string(read).substr(0, 1);
                         if (!raceField.moveCar(i, receivedLetter)) {
                             string message = "Vehicle has been eliminated.\n";
                             send(i, message.c_str(), message.length(), 0);
-                            disconnectClient(master, i);
+                            server.disconnectClient(i);
 
                             if(raceField.isWasClash() && raceField.getLastVictimCarIndex() != -1){
                                 send(raceField.getLastVictimCarIndex(), message.c_str(), message.length(), 0);
-                                disconnectClient(master, raceField.getLastVictimCarIndex());
+                                server.disconnectClient(raceField.getLastVictimCarIndex());
                                 raceField.setWasClash(false);
                             }
                         } else {
@@ -145,11 +106,6 @@ int main(int argc, char *argv[]) {
             } //if FD_ISSET
         } //for i to max_socket
     }//while(1)
-
-    printf("Closing listening socket...\n");
-    CLOSESOCKET(socket_listen);
-
-    printf("Finished.\n");
     return 0;
 }
 
@@ -158,7 +114,3 @@ bool clientIsRegistered(const RaceField &raceField,
     return StringUtil::isSingleCapitalLetter(raceField.getCarName(socketNumber));
 }
 
-void disconnectClient(fd_set &master, int socketNumber) {
-    FD_CLR(socketNumber, &master);
-    CLOSESOCKET(socketNumber);
-}
