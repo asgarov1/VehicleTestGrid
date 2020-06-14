@@ -7,6 +7,7 @@
 #include <utility>
 #include <iostream>
 #include "RaceField.h"
+#include "StringUtil.h"
 
 void RaceField::initialiseRaceField(int argc, char *argv[]) {
     int opt;
@@ -182,3 +183,6 @@ void RaceField::setVictimCarIndex(int victimCarIndex) {
     RaceField::lastVictimCarIndex = victimCarIndex;
 }
 
+bool RaceField::clientIsRegistered(int socketNumber) {
+    return StringUtil::isSingleCapitalLetter(getCarName(socketNumber));
+}

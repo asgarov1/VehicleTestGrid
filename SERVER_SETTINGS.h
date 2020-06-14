@@ -1,5 +1,5 @@
 //
-// Created by extremer on 08.06.20.
+// Created by Javid Asgarov on 08.06.20.
 //
 
 #ifndef SERVER_SETTINGS_H

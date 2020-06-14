@@ -9,6 +9,7 @@
 
 using namespace std;
 
+//using pipe communication to display info from server
 int main() {
     int fd1;
     bool keepReading = true;
@@ -22,7 +23,7 @@ int main() {
 
     int inputSizeInBytes = 4096;
     char input[inputSizeInBytes];
-    std::cout << "Once clients register grid will be displayed here" << std::endl;
+    std::cout << "Once clients register, grid will be displayed here" << std::endl;
     while (keepReading) {
         fd1 = open(myfifo, O_RDONLY);
         // First open in read only and read

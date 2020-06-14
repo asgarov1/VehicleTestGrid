@@ -1,5 +1,5 @@
 //
-// Created by extremer on 14.06.20.
+// Created by Javid Asgarov on 14.06.20.
 //
 
 #ifndef GRIDDISPLAY_SERVER_H
@@ -39,19 +39,26 @@ public:
 public:
     Server();
 
+    /**
+    * Main logic of initialising the server
+    */
     void initialiseServer();
+
+    /**
+    * Disconnects the client
+    * @param socketNumber
+    */
+    void disconnectClient(int socketNumber);
 
     //Getters
     [[nodiscard]] const addrinfo &getHints() const;
     [[nodiscard]] int getSocketListen() const;
-    const fd_set & getMaster() const;
+    const fd_set &getMaster() const;
     [[nodiscard]] int getMaxSocket() const;
 
+    //Setters
     void setMaxSocket(int maxSocket);
-
     void fdSetWithMaster(int socketClient);
-
-    void disconnectClient(int socketNumber);
 };
 
 

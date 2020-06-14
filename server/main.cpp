@@ -7,8 +7,6 @@
 #include "StringUtil.h"
 #include "Server.h"
 
-bool clientIsRegistered(const RaceField &raceField, int socketNumber);
-
 using namespace std;
 
 int main(int argc, char *argv[]) {
@@ -61,7 +59,6 @@ int main(int argc, char *argv[]) {
                                 client_len,
                                 address_buffer, sizeof(address_buffer), 0, 0,
                                 NI_NUMERICHOST);
-//                    printf("New connection from %s\n", address_buffer);
                 } else {
                     char read[1024];
                     int bytes_received = recv(i, read, 1024, 0);
@@ -69,7 +66,7 @@ int main(int argc, char *argv[]) {
                         server.disconnectClient(i);
                         continue;
                     }
-                    if (!clientIsRegistered(raceField, i)) {
+                    if (!raceField.clientIsRegistered(i)) {
                         string receivedLetter = string(read).substr(0,
                                                                     1); //message contains \n and ip, therefore I have to use substr
                         if (!raceField.isFull() && StringUtil::isSingleCapitalLetter(receivedLetter) &&
@@ -108,9 +105,3 @@ int main(int argc, char *argv[]) {
     }//while(1)
     return 0;
 }
-
-bool clientIsRegistered(const RaceField &raceField,
-                        int socketNumber) {
-    return StringUtil::isSingleCapitalLetter(raceField.getCarName(socketNumber));
-}
-

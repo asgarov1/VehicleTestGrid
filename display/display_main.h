@@ -1,5 +1,5 @@
 //
-// Created by extremer on 13.06.20.
+// Created by Javid Asgarov on 13.06.20.
 //
 
 #ifndef GRIDDISPLAY_DISPLAY_MAIN_H

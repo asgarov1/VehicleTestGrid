@@ -1,5 +1,5 @@
 //
-// Created by extremer on 14.06.20.
+// Created by Javid Asgarov on 14.06.20.
 //
 
 #include "Server.h"
@@ -53,10 +53,16 @@ void Server::initialiseServer() {
     max_socket = socket_listen;
 }
 
+void Server::disconnectClient(int socketNumber) {
+    FD_CLR(socketNumber, &master);
+    CLOSESOCKET(socketNumber);
+}
+
 Server::~Server() {
     CLOSESOCKET(socket_listen);
 }
 
+//Getters
 const addrinfo &Server::getHints() const {
     return hints;
 }
@@ -79,9 +85,4 @@ void Server::setMaxSocket(int maxSocket) {
 
 void Server::fdSetWithMaster(int socketClient) {
     FD_SET(socketClient, &master);
-}
-
-void Server::disconnectClient(int socketNumber) {
-    FD_CLR(socketNumber, &master);
-    CLOSESOCKET(socketNumber);
 }

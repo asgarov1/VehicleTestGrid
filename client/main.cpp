@@ -1,7 +1,5 @@
 #include <sys/types.h>
 #include <sys/socket.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
 #include <netdb.h>
 #include <unistd.h>
 #include <errno.h>
@@ -13,15 +11,10 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <cctype>
-#include <cstdlib>
 #include <string>
 #include <iostream>
 
 #include "../SERVER_SETTINGS.h"
-
-//#define PORT "8080"
-//#define HOSTNAME "127.0.0.1"
 
 bool isRegistered = false;
 
@@ -49,8 +42,6 @@ int main(int argc, char *argv[]) {
                 address_buffer, sizeof(address_buffer),
                 service_buffer, sizeof(service_buffer),
                 NI_NUMERICHOST);
-//    printf("%s %s\n", address_buffer, service_buffer);
-
 
     //Creating socket
     SOCKET socket_peer;
@@ -60,7 +51,6 @@ int main(int argc, char *argv[]) {
         fprintf(stderr, "socket() failed. (%d)\n", GETSOCKETERRNO());
         return 1;
     }
-
 
     //Connecting
     if (connect(socket_peer,
