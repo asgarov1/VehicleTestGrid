@@ -2,6 +2,9 @@
  by Javid Asgarov
   & Aaron Nietgen
 
+This is a little game where there is a server, display service and up to 26 clients that can connect to the server.
+Each client chooses a letter with which he will be identified. Following this he can move around the map that will be shown in display service until he hits something. Then he disconnects.
+
 <h4>Usage:</h4> 
 first run <b>cmake ./</b> and then <b>make all</b> <br>
 after that you can run <br>
